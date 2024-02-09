@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 21:42:01 by ychahbi           #+#    #+#             */
-/*   Updated: 2024/01/22 22:34:50 by ychahbi          ###   ########.fr       */
+/*   Updated: 2024/02/09 09:47:08 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 #include <iostream>
 
-void    func(int i);
 
-template <typename T>
-void    iter(T *arry, T size, void (*func)(T))
+
+template <typename G, typename T, typename Y>
+void    iter(G arry, T size, Y func)
 {
-    for (int i = 0; i < size; i++)
+    for (T i = 0; i < size; i++)
         func(arry[i]);
 }
 

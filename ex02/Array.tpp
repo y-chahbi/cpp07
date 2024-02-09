@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 08:52:09 by ychahbi           #+#    #+#             */
-/*   Updated: 2024/01/23 15:58:59 by ychahbi          ###   ########.fr       */
+/*   Updated: 2024/02/09 10:40:27 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define ARRAY_TPP
 
 template <class T>
-Array<T>::Array() : array(nullptr), y(0) {}
+Array<T>::Array() : array(NULL), y(0) {}
 
 
 template <class T>
@@ -24,13 +24,13 @@ template <class T>
 Array<T>::~Array(){}
 
 template <class T>
-const T& Array<T>::getArray(int i) const
+const T& Array<T>::getArray(unsigned int i) const
 {
     return (this->array[i]);
 }
 
 template <typename T>
-void     Array<T>::setInArray(int i, T o)
+void     Array<T>::setInArray(unsigned int i, T o)
 {
     if (i >= this->size() || i < 0)
         std::cerr << "Out of range" << std::endl;
@@ -50,18 +50,17 @@ Array<T>& Array<T>::operator=(const Array& Copy)
     this->y = Copy.size();
     //delete[] Array;
     this->array = new T[Copy.size()];
-    for (int i = 0; i < Copy.size(); i++)
+    for (unsigned int i = 0; i < Copy.size(); i++)
         this->array[i] = Copy.getArray(i);
     return (*this);
 }
 
 template <class T>
-T& Array<T>::operator[](int l)
+T& Array<T>::operator[](unsigned int l)
 {
-    if (l < 0 || l > this->size())
-        throw "The index is out of bounds";
+    if (l < 0 || l >= this->size())
+        throw std::invalid_argument("The index is out of bounds");
     return (this->array[l]);
 }
-
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 08:15:13 by ychahbi           #+#    #+#             */
-/*   Updated: 2024/01/23 15:46:17 by ychahbi          ###   ########.fr       */
+/*   Updated: 2024/02/09 10:40:17 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ class Array
     public:
         Array();
         //const T& getSize() const;
-        T& operator[](int);
+        T& operator[](unsigned int);
         Array& operator=(const Array& Copy);
         Array(unsigned int);
-        const T& getArray(int) const;
-        void     setInArray(int, T);
+        const T& getArray(unsigned int) const;
+        void     setInArray(unsigned int, T);
         size_t size() const;
         ~Array();
 };
