@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 08:52:09 by ychahbi           #+#    #+#             */
-/*   Updated: 2024/02/09 10:40:27 by ychahbi          ###   ########.fr       */
+/*   Updated: 2024/02/11 16:17:25 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,11 @@ Array<T>& Array<T>::operator=(const Array& Copy)
 }
 
 template <class T>
-T& Array<T>::operator[](unsigned int l)
+T& Array<T>::operator[](unsigned int num)
 {
-    if (l < 0 || l >= this->size())
+    if (num < 0 || num >= this->size())
         throw std::invalid_argument("The index is out of bounds");
-    return (this->array[l]);
+    return (this->array[num]);
 }
 
 #endif
