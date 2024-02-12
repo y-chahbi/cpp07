@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 08:15:53 by ychahbi           #+#    #+#             */
-/*   Updated: 2024/02/11 16:16:17 by ychahbi          ###   ########.fr       */
+/*   Updated: 2024/02/12 14:31:26 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,36 @@
 
 int main()
 {
-    Array<int> hello(12);
-    
-    Array<int> test(12);
+    Array<int> strings(100);
 
+    for (unsigned int i = 0; i < strings.size(); i++)
+    {
+        try {
+            strings.setInArray(i, i);
+        }
+        catch(std::exception& e)
+        {
+            std::cout << e.what() << std::endl;
+        }
+    }
 
-    test.setInArray(10, 1000);
-    hello = test;
-    try{
-        hello[6] = 5555;
+    try {
+
+        std::cout << strings.getArray(5) << std::endl;
+        std::cout << strings[10] << std::endl;
     }
     catch(std::exception& e)
     {
         std::cout << e.what() << std::endl;
     }
-    std::cout << hello[10] << std::endl;
-    //std::cout << test.size() << std::endl;
-    //for (int i = 0; i < hello.size(); i++)
-    //    std::cout << hello.getArray(i) << std::endl;
-    //std::cout << hello.size() << std::endl;
+
+    try {
+
+        strings[50] = 11;
+        std::cout << strings[50] << std::endl;
+    }
+    catch(std::exception& e)
+    {
+        std::cout << e.what() << std::endl;
+    }
 }
